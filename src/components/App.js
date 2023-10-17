@@ -4,21 +4,22 @@ import logo from '../logo.svg';
 import '../App.css';
 import Header from './Header';
 import SearchBar from './SearchBar';
+import Form from './Form';
 // import './data/index.css'; 
-
-
-
 
 
 function App() {
   const [players, setPlayers ]=useState([])
   const [searchText,setSearchText]=useState("")
+  // const [newLegend, setNewLegend]=useState("")
+
+  function onNewLegend(createdLegend){
+    setPlayers((currentLegends)=> [...currentLegends,createdLegend])
+  }
 
   function handleFilter(searchText){
     setSearchText(searchText)
   }
-
-  console.log(searchText)
 
   const filteredPlayers = players.filter((newPlayers)=>{
     const playersToLowerCase = newPlayers.name.toLowerCase();
@@ -41,6 +42,7 @@ function App() {
       <Header/>
       <SearchBar handleFilter={handleFilter}/>
       <PlayersContainer players={filteredPlayers}/>
+      <Form onNewLegend={onNewLegend}/>
     </div>
   );
 }

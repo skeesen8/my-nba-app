@@ -4,20 +4,20 @@ function Players({name,yearsPlayed,averagePoints,careerPoints,championships,pict
     return(
         <div>
         <p>
-            name;{name}
+            {name}
             
         </p>
         <p>
-        averagePoints;{averagePoints}
+        Average Points: {averagePoints}
         </p>
         <p>
-            yearsPlayed;{yearsPlayed}
+            Years Played: {yearsPlayed}
         </p>
         <p>
-            careerPoints;{careerPoints}
+            Career Points: {careerPoints}
         </p>
         <p>
-            championships{championships}
+            Championships: {championships}
         </p>
         <img src={pictureUrl} />
         </div>
