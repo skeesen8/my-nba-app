@@ -1,26 +1,30 @@
-
-import React from 'react';
+import PlayersContainer from './PlayersContainer';
+import React, {useState,useEffect} from 'react';
 import logo from '../logo.svg';
 import '../App.css';
-// import './data/index.css';
+import Header from './Header';
+import SearchBar from './SearchBar';
+// import './data/index.css'; 
+
+
+
+
 
 function App() {
+  const [players, setPlayers ]=useState([])
+  useEffect(() => {
+  fetch("http://localhost:8003/Legends")
+  .then((resp) => resp.json())
+  .then((playerData) => setPlayers(playerData))
+},[])
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      <Header/>
+      <SearchBar/>
+      <PlayersContainer players={players}/>
     </div>
   );
 }
