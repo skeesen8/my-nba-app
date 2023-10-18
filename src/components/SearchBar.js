@@ -15,7 +15,6 @@ function handleSearch(e){
 }
     return(
         <div className="search">
-          <h3>search bar</h3>
           <input type="text" className="searchTerm" value={inputValue} onChange={handleSearch}  />
           <button onClick={handleNavigate}>Search Legend</button>
       

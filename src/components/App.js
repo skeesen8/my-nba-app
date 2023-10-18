@@ -45,8 +45,8 @@ function App() {
     
     <div>
       <Header/>
-      <Outlet context={context}/>
       <SearchBar handleFilter={handleFilter}/>
+      <Outlet context={context}/>
       {/* <PlayersContainer players={filteredPlayers}/> */}
       {/* <Form onNewLegend={onNewLegend}/> */}
     </div>
