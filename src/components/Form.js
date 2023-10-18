@@ -110,7 +110,7 @@ return(
         name="pictureUrl"
         />
 
-        <button type="submit" onClick={handleSubmit}>Submit</button>       
+        <button type="submit" onClick={handleSubmit}>Create Legend</button>       
     
     </form>
     

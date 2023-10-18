@@ -9,14 +9,14 @@ function Header(){
             NBA LEGENDS
         </h1>
         <nav>
-            <NavLink to="/players" end >Players</NavLink>
+            <NavLink to="/players" end >Legends</NavLink>
         </nav>
         <nav>
-            <NavLink to="/players/new" end >    Add a Legend</NavLink>
+            <NavLink to="/players/new" end >Add a Legend</NavLink>
         </nav>
 
         <nav>
-            <NavLink to="/" end >   Home</NavLink>
+            <NavLink to="/" end >Home</NavLink>
         </nav>
 
 

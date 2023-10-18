@@ -6,6 +6,7 @@ import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import PlayersContainer from './components/PlayersContainer';
 import DefaultPage from './components/DefaultPage';
 import Form from './components/Form';
+import SearchBar from './components/SearchBar';
 
 // import reportWebVitals from './reportWebVitals';
 

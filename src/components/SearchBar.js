@@ -1,9 +1,14 @@
 import React from "react";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom"
 
 
 function SearchBar({handleFilter}){
 const [inputValue,setInputValue] = useState("")
+const navigate=useNavigate()
+function handleNavigate(){
+  navigate("/players")
+}
 function handleSearch(e){
   setInputValue(e.target.value)
   handleFilter(e.target.value)
@@ -12,6 +17,7 @@ function handleSearch(e){
         <div className="search">
           <h3>search bar</h3>
           <input type="text" className="searchTerm" value={inputValue} onChange={handleSearch}  />
+          <button onClick={handleNavigate}>Search Legend</button>
       
     </div>
     )
