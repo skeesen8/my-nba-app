@@ -5,6 +5,7 @@ import '../App.css';
 import Header from './Header';
 import SearchBar from './SearchBar';
 import Form from './Form';
+import {Outlet} from "react-router-dom"
 // import './data/index.css'; 
 
 
@@ -35,14 +36,19 @@ function App() {
   .then((playerData) => setPlayers(playerData))
 },[])
 
+  const context = {
+    players:filteredPlayers,
+    onNewLegend:onNewLegend,
+  }
   
   return (
     
     <div>
       <Header/>
-      <SearchBar handleFilter={handleFilter}/>
-      <PlayersContainer players={filteredPlayers}/>
-      <Form onNewLegend={onNewLegend}/>
+      <Outlet context={context}/>
+      {/* <SearchBar handleFilter={handleFilter}/> */}
+      {/* <PlayersContainer players={filteredPlayers}/> */}
+      {/* <Form onNewLegend={onNewLegend}/> */}
     </div>
   );
 }

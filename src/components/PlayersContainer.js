@@ -1,7 +1,9 @@
 import React from "react";
 import Players from "./Players";
+import {useOutletContext} from "react-router-dom"
 
-function PlayersContainer({players}){
+function PlayersContainer(){
+    const {players} = useOutletContext()
     const renderPlayers = players.map((playersObj) => {
         return(
             <Players

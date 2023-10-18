@@ -1,8 +1,11 @@
 import React from "react";
 import { useState } from "react";
-function Form({onNewLegend}){
+import {useOutletContext} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
+function Form(){
+    const navigate=useNavigate()
+    const {onNewLegend} = useOutletContext()
     const[formName,setFormName] = useState("")
-
     const[averagePoints,setAveragePoints]=useState("")
     const[yearsPlayed, setYearsPlayed]=useState("")
     const[careerPoints,setCareerPoints]=useState("")
@@ -49,7 +52,8 @@ function Form({onNewLegend}){
             })
             .then(response => response.json())
             .then(newLegendFromServer => onNewLegend(newLegendFromServer));
-        console.log('clicked')
+            navigate("/players")
+        
     }
 return(
     <form>

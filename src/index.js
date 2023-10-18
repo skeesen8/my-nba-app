@@ -2,13 +2,37 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App.js';
+import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import PlayersContainer from './components/PlayersContainer';
+import DefaultPage from './components/DefaultPage';
+import Form from './components/Form';
 
 // import reportWebVitals from './reportWebVitals';
+
+const routes = [{
+    path:"/",
+    element:<App/>,
+    children:[
+        {index:true, element:<DefaultPage/>},
+        {
+        path:"/players",
+        element:<PlayersContainer/>,
+        },
+        {
+        path:"/players/new",
+        element:<Form/>
+        }
+
+]
+}
+]
+
+const router = createBrowserRouter(routes)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <App />
+    <RouterProvider router={router} />
 
 );
 
