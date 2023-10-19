@@ -10,6 +10,11 @@ import {Outlet} from "react-router-dom"
 
 
 function App() {
+
+  // function play(){
+  //   new Audio(sound).play()
+
+  // }
   const [players, setPlayers ]=useState([])
   const [searchText,setSearchText]=useState("")
   // const [newLegend, setNewLegend]=useState("")
@@ -45,6 +50,7 @@ function App() {
     
     <div>
       <Header/>
+
       <SearchBar handleFilter={handleFilter}/>
       <Outlet context={context}/>
       {/* <PlayersContainer players={filteredPlayers}/> */}
