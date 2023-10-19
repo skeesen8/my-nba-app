@@ -17,10 +17,22 @@ function App() {
   // }
   const [players, setPlayers ]=useState([])
   const [searchText,setSearchText]=useState("")
+  
   // const [newLegend, setNewLegend]=useState("")
 
   function onNewLegend(createdLegend){
     setPlayers((currentLegends)=> [...currentLegends,createdLegend])
+  }
+
+  function onUpdateLegend(updatedLegend){
+    setPlayers((currentLegends)=>currentLegends.map((legend)=>{
+      if (legend.id===updatedLegend.id){
+        return updatedLegend
+      } else {
+        return legend
+      }
+    }))
+
   }
 
   function handleFilter(searchText){
@@ -44,6 +56,7 @@ function App() {
   const context = {
     players:filteredPlayers,
     onNewLegend:onNewLegend,
+    onUpdateLegend:onUpdateLegend
   }
   
   return (
