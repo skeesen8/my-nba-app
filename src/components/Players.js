@@ -2,7 +2,8 @@ import React from "react";
 
 function Players({name,yearsPlayed,averagePoints,careerPoints,championships,pictureUrl}){
     return(
-        <div>
+        <div className="players">
+        <img src={pictureUrl} />
         <p>
             {name}
             
@@ -19,7 +20,6 @@ function Players({name,yearsPlayed,averagePoints,careerPoints,championships,pict
         <p>
             Championships: {championships}
         </p>
-        <img src={pictureUrl} />
         </div>
     )
 }

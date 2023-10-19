@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+div.players{
+  color:blue;
+  display: inline-block; /* or inline-flex */
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+div.search{
+  text-align:center;
+  text-decoration: underline;
+}
+
+div.home{
+  display: inline-block; /* or inline-flex */
+  flex-wrap: wrap;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img{
+  width:400px;
+  height:300px;
+  border:10px solid transparent;
+  border-radius: 5%;
+}
+
+header{
+  text-align: center;
+  background-color:lightgrey;
+  
+}
+
+form{
+  text-align:center;
+}
+
