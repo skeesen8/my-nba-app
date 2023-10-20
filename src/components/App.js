@@ -21,7 +21,7 @@ function App() {
   // const [newLegend, setNewLegend]=useState("")
 
   function onNewLegend(createdLegend){
-    setPlayers((currentLegends)=> [...currentLegends,createdLegend])
+    setPlayers((currentLegends)=> [createdLegend,...currentLegends])
   }
 
   function onUpdateLegend(updatedLegend){
